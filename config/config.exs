@@ -27,7 +27,4 @@ use Mix.Config
 # Configuration from the imported file will override the ones defined
 # here (which is why it is important to import them last).
 #
-#     import_config "#{Mix.env}.exs"
-
-config :example, cowboy_port: 8888
-config :example, botToken: "322379649:AAFffj4UAjgGgNJSAAHsQ-94bc_uUEJIq7U"
+import_config "#{Mix.env}.exs"

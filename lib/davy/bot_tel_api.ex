@@ -9,7 +9,7 @@ defmodule Davy.BotTelApi do
 
 
   defp build_url(method) do
-		@api_url <> getToken() <> "/" <>method
+		@api_url <> getToken() <> "/" <> method
 	end
 
 	defp makeRequest(method, request \\ [], timeout \\ 5) do
@@ -33,6 +33,7 @@ defmodule Davy.BotTelApi do
 				reply_markup: reply_markup |> Poison.encode!
 			]
 		}
+
 	  makeRequest("sendMessage", body)
 	end
 

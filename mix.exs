@@ -16,7 +16,7 @@ defmodule Example.Mixfile do
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
     [
-    	extra_applications: [:httpoison, :poison, :cowboy, :logger, :plug],
+    	extra_applications: [:httpoison, :poison, :cowboy, :logger, :redix, :plug],
     	mod: {Example, []}
 		]
   end
@@ -35,7 +35,8 @@ defmodule Example.Mixfile do
       {:cowboy, "~> 1.1.2"},
       {:plug, "~> 1.3.4"},
       {:poison, "~> 3.0"},
-      {:httpoison, "~> 0.11.1"}
+      {:httpoison, "~> 0.11.1"},
+      {:redix, ">= 0.0.0"}
     ]
   end
 end

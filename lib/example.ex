@@ -8,6 +8,9 @@ defmodule Example do
     	Plug.Adapters.Cowboy.child_spec(:http, Davy.BotRouter, [], port: port)
     ]
 
+    :ets.new(:users, [:set, :public, :named_table])
+    :ets.insert(:users, {123, :productName, %{}})
+
     Logger.info "Started application on localhost:#{port}"
 
     Supervisor.start_link(children, strategy: :one_for_one)
